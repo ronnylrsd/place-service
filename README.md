@@ -45,7 +45,6 @@ Preparar o seu ambiente Java para projetos na sua máquina.
 3 ferramentas principais, para baixar:
 - **Java SDK**
 - **Visual Studio Code**
-- **httpie**, para testar a API
 - **Spring Boot**, pode ser instalado diretamento no vscode, aconselho também instalar o **delux package do java**
 
 ## 🚀 Como executar
@@ -61,6 +60,26 @@ $ java -jar target/todolist-0.0.1-SNAPSHOT.jar
 ```
 
 A API poderá ser acessada em [localhost:8080].
+
+### API Endpoints
+Para fazer as requisições HTTP abaixo, você pode usar o [httpie](https://httpie.org/), [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/).
+
+- POST "/places"
+```java
+http POST :8080/places name="Place" state="State"
+
+HTTP/1.1 200 OK
+Content-Length: 129
+Content-Type: application/json
+
+{
+    "createdAt": "2023-07-24T15:10:05.000+00:00",
+    "name": "Place",
+    "slug": "place",
+    "state": "State",
+    "updatedAt": "2023-07-24T15:10:05.000+00:00"
+}
+```
 
 ## 👷 COLABORADOR
 
