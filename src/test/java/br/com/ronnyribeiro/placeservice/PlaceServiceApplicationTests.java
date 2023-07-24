@@ -34,4 +34,18 @@ class PlaceServiceApplicationTests {
 			.jsonPath("updatedAt").isNotEmpty();
 	}
 
+	@Test
+	public void testCreatePlaceFailure() {
+		var name = "";
+		var state = "";
+
+		webTestClient
+			.post()
+			.uri("/places")
+			.bodyValue(
+				new PlaceRequest(name, state)
+			)
+			.exchange()
+			.expectStatus().isBadRequest();
+	}
 }
